@@ -1,25 +1,14 @@
 // React
-import React, { useMemo } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 // Apollo
-import { ApolloProvider } from 'react-apollo';
-import ApolloClient from 'apollo-boost';
-// Import Files
-import './index.css';
+import { ApolloProvider } from '@apollo/client';
+
+import { client } from './shared/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// Apollo Client
-const client = new ApolloClient({
-  uri: 'https://api.github.com/graphql',
-  request: (operation: any) => {
-    operation.setContext({
-      headers: {
-        authorization: `Bearer ${process.env.REACT_APP_GITHUB_TOKEN}`
-      }
-    });
-  }
-});
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
