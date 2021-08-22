@@ -1,5 +1,4 @@
-// import { ApolloServer, gql } from "apollo-server";
-const { ApolloServer, gql } = require("apollo-server");
+import { ApolloServer, gql } from 'apollo-server';
 
 // スキーマを定義する
 const typeDefs = gql`
@@ -22,33 +21,32 @@ const typeDefs = gql`
 // クエリで取得するデータを定数で置いておく
 const books = [
   {
-    title: "Harry Potter and the Chamber of Secrets",
-    author: "J.K. Rowling"
+    title: 'Harry Potter and the Chamber of Secrets',
+    author: 'J.K. Rowling',
   },
   {
-    title: "Jurassic Park",
-    author: "Michael Crishton"
-  }
+    title: 'Jurassic Park',
+    author: 'Michael Crishton',
+  },
 ];
 
 const dates = [
   {
-    id: "0001",
-    image: "画像1"
+    id: '0001',
+    image: '画像1',
   },
   {
-    id: "0002",
-    image: "画像2"
-  }
+    id: '0002',
+    image: '画像2',
+  },
 ];
-
 
 // booksクエリ発行時の処理を指定する
 const resolvers = {
   Query: {
     books: () => books,
-    dates: () => dates
-  }
+    dates: () => dates,
+  },
 };
 
 // サーバーを起動する
